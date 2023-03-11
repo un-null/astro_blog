@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "astro_blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,7 +11,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^2.0.18"
+    "astro": "^2.0.18",
+    "microcms-js-sdk": "^2.3.2"
   },
   "devDependencies": {
     "prettier": "^2.8.4",
