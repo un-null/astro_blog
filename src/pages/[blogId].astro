@@ -21,7 +21,11 @@ const blog = await getBlogDetail(blogId);
 ---
 
 <BaseLayout>
-  <p>{blog.id}</p>
-  <p>{blog.title}</p>
-  <p>{blog.content}</p>
+  <section class="my-10 w-full grid place-items-center">
+    <h1 class="mb-10 text-2xl">{blog.title}</h1>
+    <article
+      class="prose text-neutral-300 prose-pre:bg-neutral-700 prose-headings:text-neutral-300 prose-blockquote:text-neutral-300 prose-strong:text-neutral-300"
+      set:html={blog.content}
+    />
+  </section>
 </BaseLayout>

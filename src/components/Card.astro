@@ -1,0 +1,20 @@
+---
+import dayjs from "dayjs";
+const { id, title, createdAt } = Astro.props;
+
+const formattedDate = dayjs(createdAt).format("YYYY.MM");
+---
+
+<a href={id}>
+  <div class="w-full max-w-md flex flex-col space-y-4 rounded">
+    <div
+      class="h-28 sm:h-32 md:h-36 lg:h-52 grid place-items-center bg-green-900"
+    >
+      <p>剪定記録_</p>
+    </div>
+    <div class="flex flex-col space-y-6">
+      <p>{title}</p>
+      <p class="text-xs">{formattedDate}</p>
+    </div>
+  </div>
+</a>

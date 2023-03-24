@@ -1,16 +1,21 @@
 ---
+import Card from "../components/Card.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getBlogs } from "../libs/microcms";
 
-const res = await getBlogs({ fields: ["id", "title"] });
+const res = await getBlogs({ fields: ["id", "title", "createdAt"] });
 ---
 
 <BaseLayout>
-  <ul>
+  <ul class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-10">
     {
       res.contents.map((content) => (
         <li>
-          <a href={content.id}>{content.title}</a>
+          <Card
+            id={content.id}
+            title={content.title}
+            createdAt={content.createdAt}
+          />
         </li>
       ))
     }
